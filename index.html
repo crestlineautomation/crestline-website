@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Crestline Automation | Intelligent Lighting &amp; Shades, Santa Monica</title>
+<meta name="description" content="Intelligent lighting, motorized shades, and quiet technology for exceptional homes in Los Angeles.">
+<style>body{margin:0} img{max-width:100%}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Manrope:wght@400;500&display=swap">
+<style>
+/* Layout: one long scroll of alternating stone and charcoal bands, a 12-col grid inside a 1200px measure. Single committed look (the approved design), so no dark-mode remap. */
+:root {
+  --stone: #f1efea;
+  --sand: #e4dfd7;
+  --char: #181614;
+  --char-2: #2b2824;
+  --ink: #1e1c1a;
+  --muted: #6b665f;
+  --muted-dark: #a39d93;
+  --brass: #a8885a;
+  --rule: #d6d0c6;
+  --serif: "Cormorant Garamond", "Cormorant", Garamond, "Times New Roman", serif;
+  --sans: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --measure: 1200px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { background: var(--stone); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--stone); }
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 1px solid var(--brass); outline-offset: 4px; }
+
+.wrap { max-width: var(--measure); margin: 0 auto; padding-left: max(24px, env(safe-area-inset-left, 0px)); padding-right: max(24px, env(safe-area-inset-right, 0px)); }
+.band { padding-block: clamp(64px, 10vw, 120px); }
+.band.dark { background: var(--char); color: var(--stone); }
+.band.sand { background: var(--sand); }
+
+.eyebrow { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--brass); margin: 0 0 28px; font-weight: 500; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 400; margin: 0; text-wrap: balance; letter-spacing: -.005em; }
+h1 { font-size: clamp(52px, 8vw, 96px); line-height: 1; font-weight: 300; }
+h2 { font-size: clamp(34px, 4.4vw, 52px); line-height: 1.12; font-weight: 300; }
+h3 { font-size: 26px; line-height: 1.2; }
+p { margin: 0; max-width: 62ch; }
+.lede { color: var(--muted); }
+.dark .lede { color: var(--muted-dark); }
+
+/* placeholder imagery, swapped for real project photos later */
+.photo { position: relative; background: var(--sand); width: 100%; max-width: 100%; overflow: hidden; }
+.dark .photo { background: var(--char-2); }
+.photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.photo span { position: absolute; left: 14px; bottom: 12px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.dark .photo span, .hero .photo span { color: var(--muted-dark); }
+
+/* header */
+header.site { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: color-mix(in srgb, var(--stone) 92%, transparent); backdrop-filter: blur(8px); }
+header.site .wrap { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 22px; }
+.logo { position: relative; display: inline-block; font-family: var(--serif); font-size: 19px; letter-spacing: .38em; text-decoration: none; font-weight: 500; padding-top: 1em; line-height: 1; }
+/* mountain ridge from the original Crestline mark, redrawn as a hairline */
+.logo .ridge { position: absolute; left: 24%; width: 48%; top: 0; height: 1em; overflow: visible; }
+.logo .ridge polyline { fill: none; stroke: currentColor; stroke-width: 1.2; vector-effect: non-scaling-stroke; stroke-linejoin: miter; }
+nav ul { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+nav a { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; color: var(--ink); opacity: .8; }
+nav a:hover { opacity: 1; color: var(--brass); }
+.menu-btn { display: none; background: none; border: 0; font: 500 11px var(--sans); letter-spacing: .18em; text-transform: uppercase; color: var(--ink); padding: 8px 0; cursor: pointer; }
+
+/* hero */
+.hero .photo { aspect-ratio: 16 / 8; background: var(--char-2); }
+.hero-text { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; padding-block: 56px 96px; }
+.hero-text p { color: var(--muted); max-width: 40ch; }
+
+/* lighting */
+.lighting .intro { max-width: 640px; display: grid; gap: 28px; margin-bottom: 72px; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.pair article { display: grid; gap: 18px; align-content: start; min-width: 0; }
+.pair .photo { aspect-ratio: 4 / 3; margin-bottom: 8px; }
+.pair p { font-size: 14px; }
+
+/* shades */
+.shades .grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(40px, 7vw, 96px); align-items: center; }
+.shades .photo { aspect-ratio: 4 / 3; }
+.shades .copy { display: grid; gap: 24px; min-width: 0; }
+
+/* living spaces */
+.living h2 { margin-bottom: 20px; }
+.living h2 em { font-style: italic; color: var(--muted); }
+.living .lede { margin-bottom: 64px; }
+.four { display: grid; grid-template-columns: repeat(5, 1fr); gap: 32px; }
+.four div { border-top: 1px solid var(--rule); padding-top: 18px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.four h3 { font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: .02em; }
+.four p { font-size: 14px; color: var(--muted); }
+
+/* how we work */
+.how .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 48px; }
+.how h2 { font-size: clamp(28px, 3.2vw, 38px); line-height: 1.3; margin-bottom: 28px; }
+.how .lede { font-size: 14px; }
+.steps { list-style: none; margin: 72px 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--rule); }
+.steps li { padding: 20px 28px 0 0; display: grid; gap: 12px; align-content: start; min-width: 0; }
+.steps li + li { padding-left: 28px; border-left: 1px solid var(--rule); }
+.steps .n { font-size: 11px; letter-spacing: .18em; color: var(--brass); font-variant-numeric: tabular-nums; }
+.steps h3 { margin-top: 20px; }
+.steps p { font-size: 14px; color: var(--muted); }
+
+/* studio */
+.people { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.people article { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.people article { border-top: 1px solid var(--rule); padding-top: 28px; }
+.role { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); }
+.todo { color: var(--brass); }
+.recognition { margin-top: 20px; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.recognition span { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--brass); }
+.partners { max-width: none; margin-top: 88px; padding-top: 28px; border-top: 1px solid var(--rule); font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); }
+
+/* contact + footer */
+.contact h2 { font-size: clamp(40px, 6vw, 72px); margin-bottom: 28px; }
+.contact .reach { color: var(--muted-dark); font-size: 14px; margin-bottom: 48px; }
+.contact .lines { display: flex; flex-wrap: wrap; gap: 16px 56px; }
+.contact .lines a { text-decoration: none; border-bottom: 1px solid var(--muted-dark); padding-bottom: 4px; font-size: 15px; }
+.contact .lines a:hover { color: var(--brass); border-color: var(--brass); }
+footer { margin-top: 96px; padding-top: 28px; border-top: 1px solid var(--char-2); display: flex; flex-wrap: wrap; gap: 16px; justify-content: space-between; align-items: center; font-size: 12px; color: var(--muted-dark); }
+footer .logo { color: var(--stone); font-size: 15px; }
+
+@media (max-width: 860px) {
+  .four { grid-template-columns: 1fr 1fr; row-gap: 48px; }
+  .four div:last-child { grid-column: 1 / -1; }
+  .steps { grid-template-columns: 1fr 1fr; row-gap: 40px; }
+  .steps li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .how .grid, .shades .grid, .hero-text { grid-template-columns: 1fr; }
+  .hero-text { gap: 24px; padding-block: 40px 72px; }
+}
+@media (max-width: 640px) {
+  .menu-btn { display: block; }
+  nav ul { display: none; position: absolute; left: 0; right: 0; top: 100%; flex-direction: column; gap: 0; background: var(--stone); border-bottom: 1px solid var(--rule); padding: 8px max(24px, env(safe-area-inset-right, 0px)) 16px max(24px, env(safe-area-inset-left, 0px)); }
+  nav.open ul { display: flex; }
+  nav li a { display: block; padding-block: 12px; }
+  .pair, .people, .four, .steps { grid-template-columns: 1fr; }
+  .steps li, .steps li + li { padding: 20px 0 0; border-left: 0; }
+  .steps li + li { border-top: 1px solid var(--rule); }
+  .hero .photo { aspect-ratio: 4 / 5; }
+}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Crestline Automation"><svg class="ridge" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,19 31,1.5 45,12 58,6 100,19" /></svg>CRESTLINE</a>
+    <nav id="nav" aria-label="Main">
+      <button class="menu-btn" id="menu-btn" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <ul id="nav-list">
+        <li><a href="#lighting">Lighting</a></li>
+        <li><a href="#shades">Shades</a></li>
+        <li><a href="#living">Living</a></li>
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="photo"><img src="img/hero.jpg" alt="A hillside home at dusk, its rooms and garden softly lit"></div>
+      <div class="hero-text">
+        <h1>Light, considered.</h1>
+        <p>Intelligent lighting, motorized shades, and quiet technology for exceptional homes in Los Angeles. Designed alongside your architect, built to disappear.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band dark lighting" id="lighting">
+    <div class="wrap">
+      <div class="intro">
+        <p class="eyebrow">Intelligent lighting</p>
+        <h2>The quality of light changes how a home feels. We design it from the first drawing.</h2>
+        <p class="lede">Our work centers on Lutron's intelligent lighting portfolio: fixtures and controls engineered as one system, so every room shifts naturally from morning to evening without anyone touching a switch.</p>
+      </div>
+      <div class="pair">
+        <article>
+          <div class="photo"><img src="img/ketra.jpg" alt="Kitchen and dining room under warm Ketra lighting"></div>
+          <h3>Lutron Ketra</h3>
+          <p class="lede">Full-spectrum, tunable light, from candle-warm whites to vivid color. Ketra renders art, stone, and skin with remarkable fidelity, and can follow the sun through the day.</p>
+        </article>
+        <article>
+          <div class="photo"><img src="img/rania.jpg" alt="Bathroom vanity with backlit mirror and linear tape light"></div>
+          <h3>Lutron Rania</h3>
+          <p class="lede">Natural white light across a wide range, from incandescent glow at 1,800K to midday sun at 5,500K. Downlights and tape light that sit almost invisibly in the architecture.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="band shades" id="shades">
+    <div class="wrap grid">
+      <div class="photo"><img src="img/shades.jpg" alt="Living room at sunset with motorized shades lowered over walls of glass"></div>
+      <div class="copy">
+        <p class="eyebrow" style="margin:0">Motorized shades</p>
+        <h2>Daylight, managed quietly.</h2>
+        <p class="lede">Lutron shades move in near silence and work hand in hand with the lighting: easing down against afternoon glare, opening to the morning, protecting floors and furnishings without a second thought.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="band living" id="living" style="padding-top:0">
+    <div class="wrap">
+      <p class="eyebrow">Living spaces</p>
+      <h2>Designed for the home. <em>Not the equipment rack.</em></h2>
+      <p class="lede">Everything beyond lighting and shades is kept deliberately simple.</p>
+      <div class="four">
+        <div><h3>Network &amp; WiFi</h3><p>A strong, reliable network is the foundation upon which everything is built. Seamless coverage, inside and out.</p></div>
+        <div><h3>Video</h3><p>Premium OLED displays with an Apple TV remote. Nothing to learn, nothing to explain to guests. Simply reliable.</p></div>
+        <div><h3>Music</h3><p>Sonance architectural speakers, including the invisible series, powered by Sonos. Sound without any sign of hardware.</p></div>
+        <div><h3>Cameras &amp; Access</h3><p>Discreet cameras, door stations, and remote access. Clear visibility without visual clutter.</p></div>
+        <div><h3>Control, selectively</h3><p>When a home calls for it, Josh.ai brings natural voice control to lighting, shades, and media. Always private.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band sand how">
+    <div class="wrap grid">
+      <p class="eyebrow">How we work</p>
+      <div>
+        <h2>We join projects early, working from the drawings with architects, interior designers, and builders, so lighting and technology are integrated into the design rather than added to it.</h2>
+        <p class="lede">Most of our projects come through client referrals and our relationships with design teams.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <ol class="steps">
+        <li><span class="n">01</span><h3>Listen</h3><p>We start with you, the drawings, and the way you live, not with a product list.</p></li>
+        <li><span class="n">02</span><h3>Design</h3><p>Lighting, shades, and wiring are planned room by room with your architect, designer, and builder.</p></li>
+        <li><span class="n">03</span><h3>Deliver</h3><p>We install, program, and commission every detail, then show you how little there is to learn.</p></li>
+        <li><span class="n">04</span><h3>Support</h3><p>We stay with the home after move-in, so everything keeps working the way it did on day one.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band studio" id="studio">
+    <div class="wrap">
+      <p class="eyebrow">The studio</p>
+      <div class="people">
+        <article>
+          <h3>Steve Avdul</h3>
+          <p class="role">Co-founder · System design &amp; programming</p>
+          <p class="lede">Steve grew up in his family's AV business in Ohio, then spent a decade in private equity in New York after UNC Chapel Hill and a Wharton MBA. He left finance, bicycled across the country, and settled in Santa Monica. Today he designs and programs every Crestline system.</p>
+        </article>
+        <article>
+          <h3>Justin Hersch</h3>
+          <p class="role">Co-founder · Project management &amp; execution</p>
+          <p class="lede">A lifelong Angeleno and University of Arizona graduate, Justin worked in his family's real estate and gaming businesses before co-founding Crestline in 2017. He leads and oversees every installation, from the first wire to the final walkthrough.</p>
+        </article>
+      </div>
+      <p class="partners">Lutron · Ketra · Sonance · Theory Audio · Sonos · Crestron · Josh.ai</p>
+      <p class="recognition"><span>Recognition</span>2021 CEDIA Awards for Best Lighting Solution, Best Technology Meets Design, and Best Integrated Home. 2021 CE Pro Home of the Year.</p>
+    </div>
+  </section>
+
+  <section class="band dark contact" id="contact">
+    <div class="wrap">
+      <h2>Begin a conversation.</h2>
+      <p class="reach">Based in Santa Monica, we work from Malibu to the South Bay and from Brentwood to Beverly Hills. Many of our clients have more than one home, so we also take on projects in Montecito, Santa Barbara, Palm Springs, and Big Bear, and as far away as Seattle, New York City, the Hamptons, and South Florida.</p>
+      <div class="lines">
+        <a href="tel:+13103938437">(310) 393-8437</a>
+        <a href="mailto:info@crestlineautomation.com">info@crestlineautomation.com</a>
+      </div>
+      <footer>
+        <span class="logo"><svg class="ridge" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><polyline points="0,19 31,1.5 45,12 58,6 100,19" /></svg>CRESTLINE</span>
+        <span>Santa Monica, California</span>
+        <span>© 2026 Crestline Automation LLC</span>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<script>
+  const nav = document.getElementById('nav');
+  const btn = document.getElementById('menu-btn');
+  btn.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+  });
+  nav.querySelectorAll('ul a').forEach(a => a.addEventListener('click', () => {
+    nav.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+
+</body>
+</html>
